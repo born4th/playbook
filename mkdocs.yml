@@ -1,20 +1,30 @@
-site_name: My MkDocs Sample Site
-site_description: A sample documentation site built with MkDocs
-site_author: Your Name
+site_name: Building Positive Teacher-Student Relationships
+site_description: A comprehensive guide for educators on fostering meaningful connections with students
+site_author: Educational Resources Team
 
 # Navigation
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - API Reference: api-reference.md
-  - About: about.md
-  - Tab Test: test-tabs.md
+  - 'Chapter 1: Introduction to Teacher-Student Relationships': chapter1-introduction.md
+  - 'Chapter 2: Understanding the Psychology of Relationships': chapter2-psychology.md
+  - 'Chapter 3: Building Trust and Mutual Respect': chapter3-trust.md
+  - 'Chapter 4: Effective Communication Strategies': chapter4-communication.md
+  - 'Chapter 5: Creating Inclusive and Welcoming Classrooms': chapter5-inclusive.md
+  - 'Chapter 6: Emotional Intelligence in Teaching': chapter6-emotional-intelligence.md
+  - 'Chapter 7: Managing Student Behavior and Motivation': chapter7-behavior-management.md
+  - 'Chapter 8: Supporting Student Learning and Development': chapter8-learning-support.md
+  - 'Chapter 9: Parent and Guardian Engagement': chapter9-parent-engagement.md
+  - 'Chapter 10: Cultural Competence and Equity': chapter10-cultural-competence.md
+  - 'Chapter 11: Technology and Digital Relationships': chapter11-technology.md
+  - 'Chapter 12: Assessment, Feedback, and Growth Mindset': chapter12-assessment.md
+  - 'Chapter 13: Conflict Resolution and Problem-Solving': chapter13-conflict-resolution.md
+  - 'Chapter 14: Professional Development and Sustainability': chapter14-professional-development.md
+  - 'Chapter 15: Case Studies and Best Practices': chapter15-case-studies.md
 
 # Theme
 theme:
   name: material
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
     - search.suggest
