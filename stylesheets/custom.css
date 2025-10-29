@@ -30,31 +30,39 @@
   transition: all 0.2s ease;
 }
 
-/* Only allow hover effects on non-touch devices */
+/* Disabled state for buttons at limits */
+.font-size-controls button:disabled,
+.font-size-controls button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Only allow hover effects on non-touch devices and not on disabled buttons */
 @media (hover: hover) and (pointer: fine) {
-  .font-size-controls button:hover {
+  .font-size-controls button:hover:not(:disabled):not(.disabled) {
     background: var(--md-accent-fg-color--transparent);
     transform: scale(1.05);
   }
 }
 
-.font-size-controls button:active {
+.font-size-controls button:active:not(:disabled):not(.disabled) {
   transform: scale(0.95);
 }
 
 /* Disable hover and active effects on mobile/touch devices */
 @media (hover: none) or (pointer: coarse) {
-  .font-size-controls button:hover {
+  .font-size-controls button:hover:not(:disabled):not(.disabled) {
     background: var(--md-accent-fg-color);
     transform: none;
   }
   
-  .font-size-controls button:active {
+  .font-size-controls button:active:not(:disabled):not(.disabled) {
     background: var(--md-accent-fg-color);
     transform: scale(0.98);
   }
   
-  .font-size-controls button:focus {
+  .font-size-controls button:focus:not(:disabled):not(.disabled) {
     background: var(--md-accent-fg-color);
   }
 }
