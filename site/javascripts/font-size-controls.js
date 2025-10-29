@@ -51,7 +51,10 @@
       '.md-content',
       '.md-typeset',
       'article',
-      '.md-content__inner'
+      '.md-content__inner',
+      '.admonition',
+      '.admonition-title',
+      '.admonition p'
     ];
     
     contentSelectors.forEach(selector => {
