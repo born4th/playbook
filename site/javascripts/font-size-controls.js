@@ -15,6 +15,32 @@
     return stored ? parseInt(stored, 10) : DEFAULT_FONT_SIZE;
   }
 
+  // Update button states based on current font size
+  function updateButtonStates(size) {
+    const decreaseBtn = document.querySelector('.font-decrease');
+    const increaseBtn = document.querySelector('.font-increase');
+    
+    if (decreaseBtn) {
+      if (size <= MIN_FONT_SIZE) {
+        decreaseBtn.disabled = true;
+        decreaseBtn.classList.add('disabled');
+      } else {
+        decreaseBtn.disabled = false;
+        decreaseBtn.classList.remove('disabled');
+      }
+    }
+    
+    if (increaseBtn) {
+      if (size >= MAX_FONT_SIZE) {
+        increaseBtn.disabled = true;
+        increaseBtn.classList.add('disabled');
+      } else {
+        increaseBtn.disabled = false;
+        increaseBtn.classList.remove('disabled');
+      }
+    }
+  }
+
   // Set font size in localStorage and apply to document
   function setFontSize(size) {
     size = Math.max(MIN_FONT_SIZE, Math.min(MAX_FONT_SIZE, size));
@@ -34,6 +60,9 @@
         element.style.fontSize = size + 'px';
       });
     });
+    
+    // Update button states
+    updateButtonStates(size);
   }
 
   // Create font size control buttons
@@ -76,12 +105,12 @@
 
   // Initialize font size controls
   function initFontSizeControls() {
-    // Apply current font size
-    setFontSize(getCurrentFontSize());
-
     // Create and add controls to page
     const controls = createFontSizeControls();
     document.body.appendChild(controls);
+    
+    // Apply current font size and update button states
+    setFontSize(getCurrentFontSize());
   }
 
   // Initialize when DOM is ready
