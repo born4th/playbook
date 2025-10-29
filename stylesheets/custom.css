@@ -39,22 +39,14 @@
   transform: scale(0.95);
 }
 
-/* Disabled state for buttons at limits */
-.font-size-controls button:disabled,
-.font-size-controls button.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
 /* Override active and focus states on mobile to prevent gray/stuck appearance */
 @media (max-width: 768px) {
-  .font-size-controls button:active:not(:disabled) {
+  .font-size-controls button:active {
     background: var(--md-accent-fg-color);
     transform: scale(1);
   }
   
-  .font-size-controls button:focus:not(:disabled) {
+  .font-size-controls button:focus {
     background: var(--md-accent-fg-color);
   }
 }
