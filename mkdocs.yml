@@ -27,10 +27,12 @@ theme:
   features:
     - navigation.sections
     - navigation.expand
+    - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.tabs.link
+  custom_dir: assets
   palette: 
     #Dark Mode
     - scheme: slate
@@ -38,7 +40,7 @@ theme:
         icon: material/weather-sunny
         name: Dark mode
       primary: green
-      accent: deep purple
+      accent:  green
 
     # Light Mode
     - scheme: default
@@ -46,7 +48,7 @@ theme:
         icon: material/weather-night
         name: Light mode
       primary: blue
-      accent: deep orange
+      accent: indigo
 
 # Plugins
 plugins:
@@ -67,4 +69,11 @@ markdown_extensions:
   - pymdownx.snippets
   - fenced_code
   - codehilite
+
+# Extra files
+extra_css:
+  - stylesheets/custom.css
+
+extra_javascript:
+  - javascripts/font-size-controls.js
 

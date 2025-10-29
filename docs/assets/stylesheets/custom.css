@@ -1,0 +1,130 @@
+/* Font Size Adjustment Controls */
+.font-size-controls {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #ffffff;
+  border: 2px solid #333333;
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.font-size-controls button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.font-size-controls button:hover {
+  background: var(--md-accent-fg-color--transparent);
+  transform: scale(1.05);
+}
+
+.font-size-controls button:active {
+  transform: scale(0.95);
+}
+
+.font-size-controls .font-decrease::before {
+  content: "A-";
+}
+
+.font-size-controls .font-increase::before {
+  content: "A+";
+}
+
+.font-size-controls .font-reset::before {
+  content: "⊙";
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .font-size-controls {
+    top: 100px;
+    right: 10px;
+    padding: 6px;
+  }
+
+  .font-size-controls button {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+/* Hide controls when printing */
+@media print {
+  .font-size-controls {
+    display: none !important;
+  }
+}
+
+/* Increase spacing between navigation menu items */
+.md-nav__item {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.md-nav__link {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Adjust left sidebar spacing */
+.md-sidebar--primary {
+  left: 0;
+  padding-left: 0.5rem;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  margin-left: 0;
+  padding-left: 0.5rem;
+}
+
+/* Increase spacing between left menu and main content */
+.md-content {
+  margin-left: 2rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 11rem;
+  }
+  
+  .md-content {
+    margin-left: 3rem;
+  }
+}
+
+/* Reduce spacing in right sidebar (table of contents) only */
+.md-sidebar--secondary .md-nav__item {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.md-sidebar--secondary .md-nav__link {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+/* Underline table of contents links on hover */
+.md-sidebar--secondary .md-nav__link:hover {
+  text-decoration: underline;
+}
