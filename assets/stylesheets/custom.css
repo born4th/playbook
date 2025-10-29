@@ -39,6 +39,14 @@
   transform: scale(0.95);
 }
 
+/* Disabled state for buttons at limits */
+.font-size-controls button:disabled,
+.font-size-controls button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* Fix mobile tap highlight and focus issues */
 .font-size-controls button:focus {
   outline: none;
