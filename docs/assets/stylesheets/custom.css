@@ -30,20 +30,28 @@
   transition: all 0.2s ease;
 }
 
-.font-size-controls button:hover {
-  background: var(--md-accent-fg-color--transparent);
-  transform: scale(1.05);
+/* Only allow hover effects on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .font-size-controls button:hover {
+    background: var(--md-accent-fg-color--transparent);
+    transform: scale(1.05);
+  }
 }
 
 .font-size-controls button:active {
   transform: scale(0.95);
 }
 
-/* Override active and focus states on mobile to prevent gray/stuck appearance */
-@media (max-width: 768px) {
+/* Disable hover and active effects on mobile/touch devices */
+@media (hover: none) or (pointer: coarse) {
+  .font-size-controls button:hover {
+    background: var(--md-accent-fg-color);
+    transform: none;
+  }
+  
   .font-size-controls button:active {
     background: var(--md-accent-fg-color);
-    transform: scale(1);
+    transform: scale(0.98);
   }
   
   .font-size-controls button:focus {
