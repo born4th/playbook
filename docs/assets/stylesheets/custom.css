@@ -182,3 +182,13 @@
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
   padding-bottom: 0.3rem;
 }
+
+/* Center footer text */
+.md-footer-meta__inner {
+  justify-content: center;
+}
+
+.md-copyright {
+  text-align: center;
+  width: 100%;
+}
