@@ -74,7 +74,9 @@
     const decreaseBtn = document.createElement('button');
     decreaseBtn.className = 'font-decrease';
     decreaseBtn.title = 'Decrease font size';
-    decreaseBtn.addEventListener('click', function() {
+    decreaseBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.blur(); // Remove focus immediately after click
       const currentSize = getCurrentFontSize();
       setFontSize(currentSize - STEP_SIZE);
     });
@@ -83,7 +85,9 @@
     const increaseBtn = document.createElement('button');
     increaseBtn.className = 'font-increase';
     increaseBtn.title = 'Increase font size';
-    increaseBtn.addEventListener('click', function() {
+    increaseBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.blur(); // Remove focus immediately after click
       const currentSize = getCurrentFontSize();
       setFontSize(currentSize + STEP_SIZE);
     });
@@ -92,7 +96,9 @@
     const resetBtn = document.createElement('button');
     resetBtn.className = 'font-reset';
     resetBtn.title = 'Reset font size';
-    resetBtn.addEventListener('click', function() {
+    resetBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.blur(); // Remove focus immediately after click
       setFontSize(DEFAULT_FONT_SIZE);
     });
 
