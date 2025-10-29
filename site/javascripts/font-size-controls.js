@@ -15,10 +15,30 @@
     return stored ? parseInt(stored, 10) : DEFAULT_FONT_SIZE;
   }
 
-  // Update button states based on current font size (removed - no visual disabled state)
+  // Update button states based on current font size
   function updateButtonStates(size) {
-    // Buttons remain visually the same at all times
-    // Limits are enforced in setFontSize() function
+    const decreaseBtn = document.querySelector('.font-decrease');
+    const increaseBtn = document.querySelector('.font-increase');
+    
+    if (decreaseBtn) {
+      if (size <= MIN_FONT_SIZE) {
+        decreaseBtn.disabled = true;
+        decreaseBtn.classList.add('disabled');
+      } else {
+        decreaseBtn.disabled = false;
+        decreaseBtn.classList.remove('disabled');
+      }
+    }
+    
+    if (increaseBtn) {
+      if (size >= MAX_FONT_SIZE) {
+        increaseBtn.disabled = true;
+        increaseBtn.classList.add('disabled');
+      } else {
+        increaseBtn.disabled = false;
+        increaseBtn.classList.remove('disabled');
+      }
+    }
   }
 
   // Set font size in localStorage and apply to document
