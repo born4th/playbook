@@ -39,6 +39,24 @@
   transform: scale(0.95);
 }
 
+/* Fix mobile tap highlight and focus issues */
+.font-size-controls button:focus {
+  outline: none;
+}
+
+.font-size-controls button:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+/* Remove tap highlight on mobile */
+.font-size-controls button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .font-size-controls .font-decrease::before {
   content: "A-";
 }
@@ -127,4 +145,10 @@
 /* Underline table of contents links on hover */
 .md-sidebar--secondary .md-nav__link:hover {
   text-decoration: underline;
+}
+
+/* Add underline to h3 headings in main content */
+.md-content h3 {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.3rem;
 }
