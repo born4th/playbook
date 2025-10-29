@@ -30,23 +30,25 @@
   transition: all 0.2s ease;
 }
 
-/* Disabled state for buttons at limits */
+/* Disabled state for buttons at limits - higher specificity */
 .font-size-controls button:disabled,
 .font-size-controls button.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  background: var(--md-accent-fg-color) !important;
+  transform: none !important;
 }
 
 /* Only allow hover effects on non-touch devices and not on disabled buttons */
 @media (hover: hover) and (pointer: fine) {
-  .font-size-controls button:hover:not(:disabled):not(.disabled) {
+  .font-size-controls button:not(:disabled):not(.disabled):hover {
     background: var(--md-accent-fg-color--transparent);
     transform: scale(1.05);
   }
 }
 
-.font-size-controls button:active:not(:disabled):not(.disabled) {
+.font-size-controls button:not(:disabled):not(.disabled):active {
   transform: scale(0.95);
 }
 
